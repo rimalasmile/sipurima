@@ -1,0 +1,508 @@
+/* =============================================================
+   Sipurima — v1 stylesheet
+   Mobile-first, RTL, vanilla CSS.
+   Palette: coral / yellow / green / lavender / purple on cream.
+   ============================================================= */
+
+:root {
+  --coral: #F4A261;
+  --coral-dark: #E07A3B;
+  --yellow: #F6C453;
+  --green: #A3C9A8;
+  --lavender: #CBB7E3;
+  --purple: #7A5BA1;
+  --cream: #FDF8F0;
+  --cream-deep: #F5EDDD;
+  --ink: #2A2A3C;
+  --ink-soft: #4A4A5C;
+  --wa-green: #25D366;
+  --wa-green-dark: #128C7E;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 2px 8px rgba(42, 42, 60, 0.08);
+  --shadow-md: 0 6px 20px rgba(42, 42, 60, 0.12);
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+
+  --max-w: 1120px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Assistant', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--cream);
+  direction: rtl;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Rubik', 'Assistant', Arial, sans-serif;
+  color: var(--purple);
+  line-height: 1.25;
+  margin: 0 0 var(--space-2);
+}
+
+h1 { font-size: clamp(1.8rem, 6vw, 3rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 4.5vw, 2.2rem); font-weight: 700; }
+h3 { font-size: 1.2rem; font-weight: 700; }
+
+p { margin: 0 0 var(--space-2); }
+
+a { color: var(--purple); text-decoration: underline; text-underline-offset: 3px; }
+a:hover, a:focus { color: var(--coral-dark); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* ============ Buttons ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-family: 'Rubik', 'Assistant', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  line-height: 1.2;
+}
+.btn:hover, .btn:focus {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 2px;
+}
+.btn--primary {
+  background: var(--coral);
+  color: #fff;
+}
+.btn--primary:hover, .btn--primary:focus { background: var(--coral-dark); color: #fff; }
+.btn--secondary {
+  background: var(--purple);
+  color: #fff;
+}
+.btn--secondary:hover, .btn--secondary:focus { background: #5e4485; color: #fff; }
+.btn--large { padding: 1.05rem 2rem; font-size: 1.15rem; }
+.btn--block { display: flex; width: 100%; }
+
+/* ============ Sections ============ */
+.section {
+  padding: var(--space-5) 0;
+}
+.section:nth-child(even) { background: var(--cream-deep); }
+.section__title {
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+.section__sub {
+  text-align: center;
+  color: var(--ink-soft);
+  max-width: 640px;
+  margin: 0 auto var(--space-3);
+}
+
+/* ============ 1. Hero ============ */
+.hero {
+  background: linear-gradient(160deg, var(--cream) 0%, #FFE9D6 100%);
+  padding: var(--space-4) 0 var(--space-5);
+}
+.hero__inner {
+  display: grid;
+  gap: var(--space-3);
+  text-align: center;
+}
+.hero__logo {
+  width: 120px; height: auto;
+  margin: 0 auto;
+}
+.hero__tagline {
+  color: var(--purple);
+  margin-bottom: var(--space-1);
+}
+.hero__sub {
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-3);
+}
+.hero__image img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* ============ 2. Who ============ */
+.placeholder-note {
+  background: #FFF5E0;
+  border: 1px dashed var(--coral);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ============ 4. Values ============ */
+.values {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+.values__item {
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border-right: 6px solid var(--purple);
+  background: #fff;
+}
+.values__item h3 {
+  color: var(--purple);
+  margin-bottom: 0.25rem;
+}
+.values__item p { margin: 0; }
+.values__item--coral    { border-right-color: var(--coral);    background: #FFF3E7; }
+.values__item--yellow   { border-right-color: var(--yellow);   background: #FFF8DE; }
+.values__item--green    { border-right-color: var(--green);    background: #EEF7EE; }
+.values__item--lavender { border-right-color: var(--lavender); background: #F5EEFA; }
+.values__item--purple   { border-right-color: var(--purple);   background: #EFE7F7; }
+
+/* ============ 5. Shows / Pricing ============ */
+.shows__content p,
+.section--private p {
+  max-width: 780px;
+  margin-inline: auto;
+}
+.pricing__title {
+  text-align: center;
+  margin-top: var(--space-4);
+  color: var(--purple);
+}
+.pricing {
+  width: 100%;
+  max-width: 640px;
+  margin: var(--space-2) auto;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.pricing th, .pricing td {
+  padding: 0.9rem 1rem;
+  text-align: right;
+  border-bottom: 1px solid var(--cream-deep);
+}
+.pricing thead th {
+  background: var(--purple);
+  color: #fff;
+  font-weight: 700;
+}
+.pricing tbody th {
+  font-weight: 600;
+  color: var(--ink);
+}
+.pricing tbody td {
+  font-weight: 700;
+  color: var(--coral-dark);
+}
+.pricing tbody tr:last-child th,
+.pricing tbody tr:last-child td { border-bottom: none; }
+.pricing__note {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 640px;
+  margin: var(--space-2) auto var(--space-3);
+}
+.section--shows .btn,
+.section--private .btn {
+  display: flex;
+  max-width: 420px;
+  margin: var(--space-3) auto 0;
+}
+
+/* ============ 6. Private ============ */
+.section--private { text-align: center; }
+
+/* ============ 7. Gallery ============ */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+.gallery__item {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 1 / 1;
+}
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============ 8. Testimonials ============ */
+.testimonials {
+  display: grid;
+  gap: var(--space-3);
+}
+.testimonial {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: var(--shadow-sm);
+  margin: 0;
+  border-right: 6px solid var(--coral);
+}
+.testimonial p {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--ink);
+}
+.testimonial footer {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ============ 9. FAQ ============ */
+.faq {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 780px;
+  margin: 0 auto;
+}
+.faq__item {
+  background: #fff;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-2) var(--space-3);
+}
+.faq__item summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--purple);
+  list-style: none;
+  padding: 0.35rem 0;
+  font-size: 1.05rem;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary::before {
+  content: "+";
+  display: inline-block;
+  margin-left: 0.5rem;
+  color: var(--coral);
+  font-weight: 800;
+  transition: transform 0.2s;
+}
+.faq__item[open] summary::before { content: "−"; }
+.faq__item p { margin-top: 0.5rem; color: var(--ink-soft); }
+
+/* ============ 10. Contact form ============ */
+.contact-form {
+  max-width: 560px;
+  margin: var(--space-3) auto 0;
+  background: #fff;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: var(--space-2);
+}
+.field {
+  display: grid;
+  gap: 0.35rem;
+}
+.field label {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+.field input,
+.field select {
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+  border: 1.5px solid var(--cream-deep);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  color: var(--ink);
+  direction: rtl;
+}
+.field input:focus,
+.field select:focus {
+  outline: 2px solid var(--purple);
+  outline-offset: 1px;
+  border-color: var(--purple);
+  background: #fff;
+}
+.form-status {
+  min-height: 1.3em;
+  font-weight: 600;
+  margin: 0;
+}
+.form-status.is-success { color: #2E7D32; }
+.form-status.is-error   { color: #C62828; }
+
+/* ============ 11. Footer ============ */
+.footer {
+  background: var(--purple);
+  color: #fff;
+  padding: var(--space-4) 0;
+  margin-top: var(--space-4);
+}
+.footer a { color: #FFE5C2; }
+.footer a:hover { color: #fff; }
+.footer__inner {
+  display: grid;
+  gap: var(--space-3);
+  text-align: center;
+}
+.footer__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.footer__brand img {
+  background: #fff;
+  border-radius: 50%;
+  padding: 4px;
+}
+.footer__name { margin: 0; font-weight: 700; }
+.footer__contact p { margin: 0.25rem 0; }
+.footer__credit { font-size: 0.9rem; opacity: 0.85; }
+
+/* ============ Floating WhatsApp ============ */
+.wa-float {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem; /* RTL — left side is "far" corner opposite content flow; most IL sites put it left. Matches spec: תחתית ימין → in RTL "right" = start = left visually? In RTL, 'right' in Hebrew usually means the start-side. We'll place bottom-right (start-side) = right in LTR, left in RTL. */
+  right: auto;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--wa-green);
+  color: #fff !important;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+/* Place at bottom-right (physical right) for best thumb reach in RTL */
+.wa-float {
+  left: auto;
+  right: 1rem;
+}
+.wa-float:hover, .wa-float:focus {
+  background: var(--wa-green-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.wa-float.is-visible { display: inline-flex; }
+.wa-float__text { font-size: 1rem; }
+
+/* ============ Responsive ============ */
+@media (min-width: 768px) {
+  body { font-size: 18px; }
+  .section { padding: var(--space-6) 0; }
+
+  .hero__inner {
+    grid-template-columns: 1fr 1fr;
+    text-align: right;
+    align-items: center;
+    gap: var(--space-5);
+  }
+  .hero__brand { grid-column: 1; order: 2; text-align: right; }
+  .hero__brand .hero__logo { margin: 0; }
+  .hero__content { grid-column: 1; order: 1; }
+  .hero__image { grid-column: 2; grid-row: 1 / span 2; }
+  .hero__logo { width: 140px; }
+
+  .values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .values__item:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .testimonials {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: right;
+    align-items: center;
+  }
+  .footer__brand { justify-content: flex-start; }
+  .footer__credit { text-align: left; }
+
+  /* Hide floating WA on larger screens (header CTA is enough) */
+  .wa-float.is-visible { display: inline-flex; } /* keep visible, users asked for it */
+}
+
+@media (min-width: 1024px) {
+  .hero { padding: var(--space-6) 0; }
+  .values {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .values__item:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}

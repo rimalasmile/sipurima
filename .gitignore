@@ -1,0 +1,37 @@
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+credentials.json
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node / Dev
+node_modules/
+dist/
+build/
+.cache/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Large video files (stay local, too big for GitHub)
+*.mp4
+
+# Generated / Output drafts that shouldn't be shared publicly
+# (output/ contains work-in-progress — keep local by default)
+# Uncomment next line if you ever want output/ private:
+# output/

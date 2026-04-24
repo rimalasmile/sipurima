@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv help *)",
+      "Bash(mv status *)",
+      "Read(//c/c/Users/Avner/Documents/sipurima/.claude/**)",
+      "Bash(python -c \"from docx import Document; d = Document\\('לכל המעוניין.docx'\\); [print\\(p.text\\) for p in d.paragraphs]\")",
+      "Bash(unzip -p \"לכל המעוניין.docx\" word/document.xml)",
+      "Bash(unzip -p \"מועדונית רווחה מכתב המלצה.docx\" word/document.xml)",
+      "Bash(grep -v \"^$\")",
+      "Bash(where python *)",
+      "Bash(winget install *)",
+      "Bash(powershell.exe -Command \"winget install --id Python.Python.3.12 -e --accept-source-agreements --accept-package-agreements\")",
+      "Bash(powershell.exe -Command \"& 'C:\\\\Users\\\\Avner\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe' -m pip install opencv-python mediapipe pillow\")",
+      "Bash(powershell.exe -Command \"cmd /c website\\\\scripts\\\\run_pipeline.bat\")",
+      "Bash(powershell.exe -Command \"& 'C:\\\\Users\\\\Avner\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe' website\\\\scripts\\\\make_responsive.py website\\\\assets\\\\selected website\\\\assets\\\\images\")",
+      "Bash(where npm *)",
+      "Bash(powershell.exe -Command \"npm install -g netlify-cli\")",
+      "Bash(powershell.exe -Command \"netlify deploy --dir=website --no-build\")",
+      "Bash(powershell.exe -Command \"netlify deploy --dir=website --no-build --allow-anonymous\")",
+      "Skill(daily)",
+      "Skill(daily:*)",
+      "Bash(gh auth *)",
+      "Bash(git --version)",
+      "Bash(where.exe gh *)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" --version)",
+      "Bash(\"/c/Program Files \\(x86\\)/GitHub CLI/gh.exe\" --version)",
+      "Bash(cmd.exe //c \"gh --version\")",
+      "Bash(git config *)",
+      "PowerShell(gh auth status)",
+      "PowerShell($env:Path -split ';' | Where-Object { $_ -match 'GitHub' })",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\GitHub CLI\" -ErrorAction SilentlyContinue; Get-ChildItem \"C:\\\\Program Files \\(x86\\)\\\\GitHub CLI\" -ErrorAction SilentlyContinue; Get-ChildItem \"$env:LOCALAPPDATA\\\\Microsoft\\\\WinGet\\\\Links\\\\gh.exe\" -ErrorAction SilentlyContinue)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status)",
+      "PowerShell(& \"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo create sipurima --private --description \"�������� - ����� AI ������ ��� ������� ����\" --confirm 2>&1)",
+      "PowerShell(Set-Location \"C:\\\\Users\\\\Avner\\\\Documents\\\\sipurima\"; git reset HEAD~1 --soft; git rm -r --cached \"brand/from-rima\" 2>$null; git add .gitignore; git add -A; git status --short | Where-Object { $_ -match '\\\\.mp4' })",
+      "PowerShell(Set-Location \"C:\\\\Users\\\\Avner\\\\Documents\\\\sipurima\"; Remove-Item -Recurse -Force .git -Confirm:$false; git init; git config user.name \"rimalasmile\"; git config user.email \"rimalasmile@gmail.com\"; git add -A; git status --short | Where-Object { $_ -match '\\\\.mp4' })"
+    ]
+  }
+}

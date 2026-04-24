@@ -1,0 +1,8 @@
+{
+  "_comment": "Protect zones for Rima's face in each source image. Format: [x_frac, y_frac, w_frac, h_frac] in 0..1. Any Haar-detected face whose CENTER falls inside a zone is NOT blurred.",
+  "IMG-20240801-WA0008.jpg": [[0.12, 0.16, 0.18, 0.32]],
+  "IMG-20240801-WA0014.jpg": [[0.00, 0.14, 0.28, 0.28]],
+  "IMG-20240801-WA0034.jpg": [[0.14, 0.08, 0.20, 0.28]],
+  "IMG-20240801-WA0037.jpg": [],
+  "IMG-20240801-WA0038.jpg": []
+}
