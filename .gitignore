@@ -30,6 +30,14 @@ venv/
 
 # Large video files (stay local, too big for GitHub)
 *.mp4
+!website/assets/video/*.mp4
+
+# Netlify local
+website/.netlify/
+
+# Dev files
+website/palette-preview.html
+website/content-text.txt
 
 # Generated / Output drafts that shouldn't be shared publicly
 # (output/ contains work-in-progress — keep local by default)
