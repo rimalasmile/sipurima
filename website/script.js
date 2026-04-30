@@ -57,8 +57,6 @@
       if (window.gtag) {
         window.gtag('event', 'click_whatsapp', { label: label });
       }
-      // Console trace during dev:
-      if (window.console && console.log) console.log('[wa-click]', label);
     });
   });
 

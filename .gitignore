@@ -7,6 +7,10 @@
 secrets/
 credentials.json
 
+# Claude local settings (may contain tokens)
+.claude/settings.local.json
+.claude/launch.json
+
 # OS / Editor
 .DS_Store
 Thumbs.db

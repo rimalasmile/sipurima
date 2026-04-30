@@ -289,8 +289,9 @@
             <span class="cta-circle__text">דברו איתנו</span>
           </a>
 
-          <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" novalidate>
+          <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
             <input type="hidden" name="form-name" value="contact">
+            <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
             <div class="field"><label for="f-name">שם מלא</label><input type="text" id="f-name" name="name" required autocomplete="name"></div>
             <div class="field"><label for="f-phone">טלפון</label><input type="tel" id="f-phone" name="phone" required autocomplete="tel" inputmode="tel" pattern="[0-9\-+\s]{7,15}"></div>
             <div class="field"><label for="f-type">סוג אירוע</label><select id="f-type" name="type" required><option value="">בחרו סוג אירוע</option><option value="series">סדרת הצגות (גן / מתנ"ס / ספרייה)</option><option value="single">הצגה בודדת</option><option value="private">הצגה פרטית / יום הולדת</option><option value="other">משהו אחר</option></select></div>
