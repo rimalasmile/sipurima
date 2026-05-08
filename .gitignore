@@ -6,6 +6,7 @@
 *.pem
 secrets/
 credentials.json
+SECRETS.md
 
 # Claude local settings (may contain tokens)
 .claude/settings.local.json
@@ -39,6 +40,9 @@ venv/
 # Netlify local
 .netlify/
 website/.netlify/
+
+# Backups (created during deploys/migrations)
+website-backup-*/
 
 # Raw assets (not for deployment — may contain unblurred faces)
 raw-assets/
