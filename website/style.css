@@ -87,7 +87,7 @@
   --accent-gold: #E0C870;
   --ink: #2A2622;
   --ink-soft: #666;
-  --ink-muted: #999;
+  --ink-muted: #595959;
   --bg: #fff;
   --bg-alt: #FAFAFA;
   --wa-green: #25D366;
@@ -420,7 +420,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: clamp(0.95rem, 2.5vw, 1.25rem);
   font-weight: 400;
   letter-spacing: 0.18em;
-  color: #AAA;
+  color: #595959;
   margin-bottom: 0;
 }
 .hero__image {
