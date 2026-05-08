@@ -1148,6 +1148,34 @@ body.a11y-no-animations *::after {
 .content-page ul { padding-right: 1.2em; }
 .content-page--centered { text-align: center; padding: 4rem 1rem; }
 
+/* ============ Scroll reveal animations ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ Tighter mobile spacing ============ */
+@media (max-width: 767px) {
+  .section { padding: 2rem 0; }
+  .hero { padding-bottom: 1.5rem; }
+  .footer { padding-bottom: 5rem; }
+}
+
+/* ============ Better form success state ============ */
+.form-status.is-success {
+  color: #2E7D32;
+  background: #E8F5E9;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
