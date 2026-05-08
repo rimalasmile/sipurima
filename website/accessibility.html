@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הצהרת נגישות | סיפורימה</title>
+  <meta name="description" content="הצהרת נגישות אתר סיפורימה בהתאם לתקן הישראלי 5568.">
+  <link rel="canonical" href="https://sipurima.com/accessibility.html">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand">סיפורימה</a>
+      <div class="nav__actions">
+        <a href="/" class="btn btn--secondary btn--back">חזרה לאתר</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="section">
+      <div class="container content-page">
+        <h1>הצהרת נגישות</h1>
+        <p><strong>עדכון אחרון:</strong> מאי 2026</p>
+
+        <h2>מחויבות לנגישות</h2>
+        <p>סיפורימה מחויבת להנגשת האתר לכלל האוכלוסייה, לרבות אנשים עם מוגבלויות, בהתאם לתקן הישראלי 5568 ולהנחיות WCAG 2.0 ברמה AA.</p>
+
+        <h2>אמצעי הנגישות באתר</h2>
+        <ul>
+          <li>האתר בנוי ב-HTML סמנטי עם תגיות ARIA מתאימות</li>
+          <li>תמיכה מלאה בניווט מקלדת (Tab, Enter, Escape)</li>
+          <li>כל התמונות כוללות טקסט חלופי (alt)</li>
+          <li>ניגודיות צבעים עומדת בדרישות WCAG AA</li>
+          <li>האתר מותאם לכיוון RTL ולקריאה בעברית</li>
+          <li>תמיכה בהגדלה/הקטנת גופן (עד 160%)</li>
+          <li>כפתור נגישות קבוע המאפשר: שינוי גודל גופן, ניגודיות גבוהה, גווני אפור, הדגשת קישורים ועצירת אנימציות</li>
+          <li>האתר מותאם לטלפונים ניידים, טאבלטים ומחשבים</li>
+          <li>תמיכה בהעדפת תנועה מופחתת (prefers-reduced-motion)</li>
+          <li>טפסים כוללים תוויות (labels) מקושרות לשדות</li>
+        </ul>
+
+        <h2>מגבלות ידועות</h2>
+        <ul>
+          <li>סרטון הווידאו אינו כולל כתוביות בשלב זה — כתוביות בעברית צפויות להתווסף עד יולי 2026</li>
+          <li>חלק מהאייקונים הם SVG דקורטיביים ומסומנים כ-aria-hidden</li>
+        </ul>
+
+        <h2>טכנולוגיות</h2>
+        <p>האתר בנוי ב-HTML5, CSS3 ו-JavaScript ללא תלויות חיצוניות. הפונטים מאוחסנים מקומית (ללא טעינה מגוגל). האתר אינו משתמש בעוגיות או כלי מעקב.</p>
+
+        <h2>בדיקות נגישות</h2>
+        <p>הנגישות נבדקה באמצעות כלים אוטומטיים (Lighthouse, axe DevTools) ובדיקה ידנית של ניווט מקלדת ותאימות קורא מסך.</p>
+
+        <h2>רכזת נגישות</h2>
+        <p>לפניות, שאלות או דיווח על בעיית נגישות:</p>
+        <ul>
+          <li><strong>שם:</strong> רימה שניידרמן</li>
+          <li><strong>דוא״ל:</strong> <a href="mailto:rimalasmile@gmail.com">rimalasmile@gmail.com</a></li>
+          <li><strong>טלפון:</strong> <a href="tel:+972525564136">052-5564136</a></li>
+        </ul>
+        <p>אנו מתחייבים לטפל בכל פנייה בנושא נגישות תוך 7 ימי עסקים.</p>
+
+        <h2>שינויים בהצהרה</h2>
+        <p>הצהרה זו מתעדכנת מעת לעת. שינויים יפורסמו בדף זה עם תאריך העדכון.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__row">
+      <p class="footer__name">סיפורימה | רימה שניידרמן</p>
+      <p class="footer__credit">&copy; <span id="year"></span> סיפורימה</p>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

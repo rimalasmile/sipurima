@@ -48,12 +48,10 @@
     });
   });
 
-  // Track WhatsApp clicks (placeholder — will hook into GA4 later)
   var waLinks = document.querySelectorAll('[data-wa]');
   waLinks.forEach(function (link) {
     link.addEventListener('click', function () {
       var label = link.getAttribute('data-wa');
-      // GA4 placeholder:
       if (window.gtag) {
         window.gtag('event', 'click_whatsapp', { label: label });
       }
@@ -127,15 +125,16 @@
     scrollSections.forEach(function (s) { observer.observe(s); });
   }
 
-  // Contact form — v1: basic client-side validation + mailto fallback.
-  // Once a backend endpoint (Netlify Forms / Formspree) is in, swap the submit handler.
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');
 
   if (form) {
+    var submitting = false;
+    var submitBtn = form.querySelector('[type="submit"]');
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!status) return;
+      if (!status || submitting) return;
 
       var name  = form.name.value.trim();
       var phone = form.phone.value.trim();
@@ -146,6 +145,15 @@
         status.className = 'form-status is-error';
         return;
       }
+
+      if (!/^[0-9\-+\s]{7,15}$/.test(phone)) {
+        status.textContent = 'מספר טלפון לא תקין.';
+        status.className = 'form-status is-error';
+        return;
+      }
+
+      submitting = true;
+      if (submitBtn) submitBtn.disabled = true;
 
       var data = new FormData(form);
       fetch('/', {
@@ -164,6 +172,9 @@
       }).catch(function () {
         status.textContent = 'שגיאת רשת. נסו שוב או פנו בוואטסאפ.';
         status.className = 'form-status is-error';
+      }).finally(function () {
+        submitting = false;
+        if (submitBtn) submitBtn.disabled = false;
       });
     });
   }

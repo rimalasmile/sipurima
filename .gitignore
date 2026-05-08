@@ -37,7 +37,11 @@ venv/
 !website/assets/video/*.mp4
 
 # Netlify local
+.netlify/
 website/.netlify/
+
+# Raw assets (not for deployment — may contain unblurred faces)
+raw-assets/
 
 # Dev files
 website/palette-preview.html
