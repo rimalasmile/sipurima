@@ -571,7 +571,7 @@ img { max-width: 100%; height: auto; display: block; }
   width: 52px; height: 52px;
   margin: 0 auto 0.75rem;
 }
-.service-card h3 {
+.service-card h4 {
   color: var(--heading);
   margin-bottom: 0.5rem;
 }
@@ -704,7 +704,7 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: var(--glow-subtle-hover);
   transform: translateY(-2px);
 }
-.values__item h3 {
+.values__item h4 {
   color: var(--heading);
   margin-bottom: 0.25rem;
 }
