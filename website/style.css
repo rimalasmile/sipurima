@@ -403,7 +403,6 @@ img { max-width: 100%; height: auto; display: block; }
   width: 120px; height: 120px;
   margin: 0 auto 1rem;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 
 /* ============ 1. Hero ============ */
@@ -427,7 +426,6 @@ img { max-width: 100%; height: auto; display: block; }
   width: clamp(340px, 70vw, 700px);
   height: auto;
   margin: 0 auto;
-  mix-blend-mode: multiply;
 }
 .hero__line {
   display: none;
@@ -592,7 +590,6 @@ img { max-width: 100%; height: auto; display: block; }
   width: 96px; height: 96px;
   margin: 0 auto 1rem;
   object-fit: contain;
-  mix-blend-mode: multiply;
 }
 .service-card h4 {
   color: var(--heading);
