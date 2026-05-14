@@ -423,7 +423,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hero__logo {
   display: block;
-  width: clamp(340px, 70vw, 700px);
+  width: clamp(280px, 55vw, 520px);
   height: auto;
   margin: 0 auto;
 }
