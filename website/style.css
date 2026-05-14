@@ -175,7 +175,7 @@ h2 { font-size: clamp(1.5rem, 4.5vw, 2.2rem); font-weight: 400; }
 h3 { font-size: 1.2rem; font-weight: 400; }
 
 p { margin: 0 0 var(--space-2); }
-mark { background: linear-gradient(120deg, rgba(232,128,158,0.12) 0%, rgba(200,160,216,0.14) 100%); padding: 0.1em 0.3em; border-radius: 4px; color: inherit; font-weight: 500; }
+mark { background: linear-gradient(to top, rgba(200,160,216,0.25) 0%, rgba(200,160,216,0.25) 40%, transparent 40%); padding: 0; border-radius: 0; color: inherit; font-weight: 500; }
 
 a { color: var(--heading); text-decoration: underline; text-underline-offset: 3px; }
 a:hover, a:focus { color: var(--accent-pink); }
