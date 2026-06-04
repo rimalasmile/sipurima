@@ -22,31 +22,7 @@
     });
   }
 
-  // Floating WhatsApp button
-  var waFloat = document.getElementById('wa-float');
-  function onScroll() {
-    if (!waFloat) return;
-    var scrolled = window.scrollY || document.documentElement.scrollTop;
-    var height = document.documentElement.scrollHeight - window.innerHeight;
-    var pct = height > 0 ? scrolled / height : 0;
-    if (pct > 0.3) {
-      waFloat.classList.add('is-visible');
-    } else {
-      waFloat.classList.remove('is-visible');
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // CTA circle buttons — first tap opens, second tap navigates
-  document.querySelectorAll('.cta-circle').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      if (!btn.classList.contains('is-open')) {
-        e.preventDefault();
-        btn.classList.add('is-open');
-      }
-    });
-  });
+  // CTA circle buttons — open on hover, single click navigates
 
   var waLinks = document.querySelectorAll('[data-wa]');
   waLinks.forEach(function (link) {
