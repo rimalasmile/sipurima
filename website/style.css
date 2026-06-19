@@ -206,11 +206,12 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 400;
   font-size: 1.5rem;
   color: var(--heading);
-  text-shadow: 0 -1px 1px rgba(203,155,82,0.5), 1px -2px 3px rgba(155,93,146,0.3);
+  text-shadow: 0 -1px 1px rgba(76,150,124,0.55), 1px -2px 3px rgba(76,150,124,0.35);
   transition: text-shadow 0.3s;
 }
 .nav__brand:hover {
-  text-shadow: 0 -1px 2px rgba(203,155,82,0.7), 1px -2px 4px rgba(155,93,146,0.45);
+  color: rgb(76,150,124);
+  text-shadow: 0 -1px 2px rgba(76,150,124,0.75), 1px -2px 4px rgba(76,150,124,0.5);
 }
 .nav__links {
   list-style: none;
@@ -324,7 +325,7 @@ img { max-width: 100%; height: auto; display: block; }
   gap: 0.5rem;
   padding: 0.85rem 1.6rem;
   border-radius: 999px;
-  font-family: 'Heebo', 'Assistant', sans-serif;
+  font-family: 'Assistant', sans-serif;
   font-size: 1.05rem;
   font-weight: 700;
   text-decoration: none;
@@ -386,7 +387,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============ 1. Hero ============ */
 .hero {
   background: var(--bg);
-  padding: var(--space-2) 0 var(--space-4);
+  padding: var(--space-2) 0 var(--space-2);
 }
 .hero__inner {
   display: grid;
@@ -415,7 +416,7 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.12em;
   color: var(--heading);
   text-align: center;
-  margin-top: 0.3rem;
+  margin-top: 0.9rem;
   margin-bottom: 0;
   opacity: 0.75;
 
@@ -495,7 +496,7 @@ img { max-width: 100%; height: auto; display: block; }
   transition: width 0.3s ease, height 0.3s ease;
 }
 .cta-circle__text {
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Assistant', sans-serif;
   font-weight: 700;
   font-size: 0.75rem;
   color: var(--heading);
