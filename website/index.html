@@ -141,6 +141,7 @@
     </symbol>
   </svg>
 
+
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="container nav__inner">
@@ -152,9 +153,9 @@
         <li><a href="#contact" data-section="contact">דברו איתנו</a></li>
       </ul>
       <div class="nav__actions">
+        <button class="nav__toggle" id="nav-toggle" aria-label="תפריט" aria-expanded="false"><span></span><span></span><span></span></button>
         <a href="mailto:rimalasmile@gmail.com" class="nav__icon" aria-label="אימייל"><svg width="20" height="20" aria-hidden="true"><use href="#icon-email"/></svg></a>
         <a href="https://wa.me/972525564136" class="nav__icon nav__icon--wa" aria-label="וואטסאפ" target="_blank" rel="noopener noreferrer"><svg width="20" height="20" aria-hidden="true"><use href="#icon-wa"/></svg></a>
-        <button class="nav__toggle" id="nav-toggle" aria-label="תפריט" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
@@ -162,17 +163,10 @@
   <!-- HERO -->
   <header class="hero" id="home">
     <div class="container hero__inner">
-      <svg class="hero__rainbow" viewBox="0 0 200 100" aria-hidden="true">
-        <defs><filter id="wc"><feGaussianBlur stdDeviation="1.4"/></filter></defs>
-        <path d="M12 92 Q10 24 100 18 Q190 24 188 92" fill="none" stroke="#F2A0B8" stroke-width="13" stroke-linecap="round" opacity="0.55" filter="url(#wc)"/>
-        <path d="M28 92 Q26 40 100 34 Q174 40 172 92" fill="none" stroke="#C8A8E0" stroke-width="13" stroke-linecap="round" opacity="0.5" filter="url(#wc)"/>
-        <path d="M44 92 Q43 54 100 48 Q157 54 156 92" fill="none" stroke="#A0C8E8" stroke-width="13" stroke-linecap="round" opacity="0.5" filter="url(#wc)"/>
-        <path d="M59 92 Q59 66 100 62 Q141 66 141 92" fill="none" stroke="#A0D8B8" stroke-width="13" stroke-linecap="round" opacity="0.5" filter="url(#wc)"/>
-        <path d="M73 92 Q73 78 100 75 Q127 78 127 92" fill="none" stroke="#F0D880" stroke-width="13" stroke-linecap="round" opacity="0.55" filter="url(#wc)"/>
-      </svg>
-      <h1 class="hero__title"><span class="rc rc--1">ס</span><span class="rc rc--2">י</span><span class="rc rc--3">פ</span><span class="rc rc--4">ו</span><span class="rc rc--5">ר</span><span class="rc rc--4">י</span><span class="rc rc--3">מ</span><span class="rc rc--2">ה</span></h1>
-      <div class="hero__line"></div>
-      <p class="hero__tagline">תיאטרון חווייתי לילדים</p>
+      <h1 class="hero__title">
+        <img src="assets/images/logo-hero.png" alt="סיפורימה — תיאטרון חוויתי לילדים" class="hero__logo" width="1998" height="828">
+      </h1>
+      <p class="hero__tagline">תיאטרון חוויתי לילדים</p>
       <div class="hero__image">
         <picture>
           <source type="image/webp" srcset="assets/images/hero-rima-480.webp 480w, assets/images/hero-rima-768.webp 768w, assets/images/hero-rima-1200.webp 1200w" sizes="(max-width: 600px) 100vw, 480px">
@@ -190,7 +184,7 @@
 
       <div class="page-header">
         <div class="container">
-          <svg class="section__icon" aria-hidden="true"><use href="#i-star"/></svg>
+          <img src="assets/images/icon-star.png" alt="" class="section__icon" aria-hidden="true" width="120" height="120">
           <h2 class="section__title" id="how-heading">איך הקסם קורה?</h2>
           <div class="page-header__line"></div>
         </div>
@@ -199,8 +193,8 @@
       <div class="section" aria-labelledby="how-heading">
         <div class="container how__grid">
           <div class="content-card">
-            <p>בהצגות סיפורימה הילדים נכנסים אל תוך הסיפור והופכים לדמויות!</p>
-            <p>ההצגה פותחת בהיכרות קצרה, עוברת להצגה פעילה<br>ונגמרת בקידה משותפת של כולם - כולם חלק. כולם.</p>
+            <p><strong>בהצגות סיפורימה הילדים נכנסים אל תוך הסיפור והופכים לדמויות!</strong></p>
+            <p>ההצגה פותחת בהיכרות קצרה, עוברת להצגה פעילה<br>ונגמרת בקידה משותפת של כולם — כולם חלק. כולם.</p>
             <p>אני מגיעה עם הציוד, עם התלבושות ועם הסיפור.<br>גן, מרכז קהילתי, סלון?<br>הכל עובד.<br>המקום שלכם נשאר כמו שהוא, אבל לרגע אחד קסום הוא הופך לעולם אחר.</p>
             <p>ניתן להזמין הצגה בודדת או סדרת הצגות במגוון נושאים.</p>
           </div>
@@ -214,26 +208,28 @@
 
       <div class="section" aria-labelledby="services-heading">
         <div class="container">
-          <svg class="section__icon" aria-hidden="true"><use href="#i-rainbow"/></svg>
+          <img src="assets/images/icon-rainbow.png" alt="" class="section__icon" aria-hidden="true" width="120" height="120">
           <h3 id="services-heading" class="section__title">ההצגות שלנו</h3>
           <div class="page-header__line page-header__line--services"></div>
           <div class="services-grid">
             <div class="service-card reveal">
-              <svg class="service-card__icon" aria-hidden="true"><use href="#i-star"/></svg>
+              <img src="assets/images/icon-star.png" alt="" class="service-card__icon" aria-hidden="true" width="140" height="140">
               <h4>הצגות מקור בשיתוף הקהל</h4>
-              <p>סדרת הצגות לאולמות, מרכזים קהילתיים, גנים וספריות.<br>גילאים: 4-7 | משך: 45 דקות</p>
+              <p>סדרת הצגות לאולמות, מרכזים קהילתיים, גנים וספריות.</p>
+              <p class="card-meta">גילאים: 4-7 | משך: 45 דקות</p>
               <p>סיפורים מקוריים שנכתבו בהשראת הילדים ולמען הילדים :)</p>
             </div>
             <div class="service-card reveal">
-              <svg class="service-card__icon" aria-hidden="true"><use href="#i-flower"/></svg>
+              <img src="assets/images/icon-penguin.png" alt="" class="service-card__icon" aria-hidden="true" width="140" height="140">
               <h4>הצגה פרטית לאירוע שלכם</h4>
               <p>יום הולדת, מסיבת גן, או כל רגע משפחתי שמגיע לו סיפור משלו.</p>
-              <p>הילד או הילדה הם באמת דמות בסיפור, לא רק האורח שחוגג.<br>ניתן אפילו לבנות הצגה במיוחד לאירוע!</p>
+              <p>הילד או הילדה הם באמת דמות בסיפור, לא רק האורח שחוגג.</p>
+              <p>ניתן אפילו לבנות הצגה במיוחד לאירוע!</p>
             </div>
           </div>
           <div class="cta-wrap">
             <a class="cta-circle" href="#contact" data-wa="hero">
-              <svg class="cta-circle__icon" aria-hidden="true"><use href="#i-phone"/></svg>
+              <img src="assets/images/icon-phone.png" alt="" class="cta-circle__icon" aria-hidden="true" width="140" height="140">
               <span class="cta-circle__text">דברו איתנו</span>
             </a>
           </div>
@@ -242,7 +238,7 @@
 
       <div class="section section--values" aria-labelledby="values-heading">
         <div class="container">
-          <svg class="section__icon" aria-hidden="true"><use href="#i-sun"/></svg>
+          <img src="assets/images/icon-sun.png" alt="" class="section__icon" aria-hidden="true" width="120" height="120">
           <h3 id="values-heading" class="section__title">הערכים שלנו</h3>
           <div class="page-header__line page-header__line--values"></div>
           <div class="values">
@@ -275,7 +271,7 @@
     <!-- ═══════════ TESTIMONIALS ═══════════ -->
     <section class="section section--testimonials" aria-labelledby="testimonials-heading">
       <div class="container">
-        <svg class="section__icon" aria-hidden="true"><use href="#i-heart"/></svg>
+        <img src="assets/images/icon-heart.png" alt="" class="section__icon" aria-hidden="true" width="120" height="120">
         <h2 id="testimonials-heading" class="section__title">מה אומרים עלינו</h2>
         <div class="testimonials">
           <blockquote class="testimonial reveal">
@@ -293,7 +289,7 @@
         </div>
         <div class="cta-wrap">
           <a class="cta-circle" href="#contact" data-wa="testimonials">
-            <svg class="cta-circle__icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            <img src="assets/images/icon-phone.png" alt="" class="cta-circle__icon" aria-hidden="true" width="140" height="140">
             <span class="cta-circle__text">רוצים גם?</span>
           </a>
         </div>
@@ -305,7 +301,7 @@
 
       <div class="page-header">
         <div class="container">
-          <svg class="section__icon" aria-hidden="true"><use href="#i-book"/></svg>
+          <img src="assets/images/icon-book.png" alt="" class="section__icon" aria-hidden="true" width="120" height="120">
           <h2 class="section__title" id="who-heading">הסיפור שלנו</h2>
           <div class="page-header__line"></div>
         </div>
@@ -342,7 +338,7 @@
 
       <div class="page-header">
         <div class="container">
-          <svg class="section__icon" aria-hidden="true"><use href="#i-rainbow"/></svg>
+          <img src="assets/images/icon-faq.png" alt="" class="section__icon" aria-hidden="true" width="140" height="140">
           <h2 class="section__title">שאלות נפוצות</h2>
           <div class="page-header__line"></div>
         </div>
@@ -402,7 +398,7 @@
 
       <div class="page-header">
         <div class="container">
-          <svg class="section__icon" aria-hidden="true"><use href="#i-envelope"/></svg>
+          <img src="assets/images/icon-envelope.png" alt="" class="section__icon" aria-hidden="true" width="120" height="120">
           <h2 class="section__title">יצירת קשר</h2>
           <div class="page-header__line"></div>
         </div>
@@ -421,10 +417,10 @@
         </svg>
         <div class="container">
           <h3 id="contact-heading" class="sr-only">יצירת קשר</h3>
-          <p class="section__sub">הדרך המהירה ביותר? וואטסאפ<br>הדרך הכמעט מהירה ביותר? טופס</p>
+          <p class="section__sub">הדרך המהירה ביותר? <a href="https://wa.me/972525564136?text=%D7%94%D7%99%D7%99%20%D7%A8%D7%99%D7%9E%D7%94%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8." target="_blank" rel="noopener noreferrer">וואטסאפ</a><br>הדרך הכמעט מהירה ביותר? <a href="#contact-form">טופס</a></p>
 
           <a class="cta-circle" href="https://wa.me/972525564136?text=%D7%94%D7%99%D7%99%20%D7%A8%D7%99%D7%9E%D7%94%2C%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8." target="_blank" rel="noopener noreferrer" data-wa="contact-main">
-            <svg class="cta-circle__icon" aria-hidden="true"><use href="#i-phone"/></svg>
+            <img src="assets/images/icon-phone.png" alt="" class="cta-circle__icon" aria-hidden="true" width="120" height="120">
             <span class="cta-circle__text">דברו איתנו</span>
           </a>
 
