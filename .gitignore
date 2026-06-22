@@ -55,3 +55,6 @@ website/content-text.txt
 # (output/ contains work-in-progress — keep local by default)
 # Uncomment next line if you ever want output/ private:
 # output/
+
+# Claude worktrees (local session checkouts)
+.claude/worktrees/
