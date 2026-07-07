@@ -204,7 +204,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
   font-family: 'Secular One', 'Assistant', sans-serif;
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 1.85rem;
   color: var(--heading);
   text-shadow: 0 -1px 1px rgba(76,150,124,0.55), 1px -2px 3px rgba(76,150,124,0.35);
   transition: text-shadow 0.3s;
@@ -235,7 +235,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
   color: var(--ink);
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   white-space: nowrap;
   border-radius: var(--radius-sm);
   transition: background 0.15s;
@@ -402,7 +402,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hero__logo {
   display: block;
-  width: clamp(280px, 55vw, 520px);
+  width: clamp(320px, 65vw, 600px);
   height: auto;
   margin: 0 auto;
 }
