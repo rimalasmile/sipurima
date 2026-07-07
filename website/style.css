@@ -194,7 +194,8 @@ img { max-width: 100%; height: auto; display: block; }
 .nav__inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
   height: 60px;
 }
 .nav__brand {
@@ -204,7 +205,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
   font-family: 'Secular One', 'Assistant', sans-serif;
   font-weight: 400;
-  font-size: 1.85rem;
+  font-size: 2.1rem;
   color: var(--heading);
   text-shadow: 0 -1px 1px rgba(76,150,124,0.55), 1px -2px 3px rgba(76,150,124,0.35);
   transition: text-shadow 0.3s;
@@ -235,7 +236,7 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
   color: var(--ink);
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1.55rem;
   white-space: nowrap;
   border-radius: var(--radius-sm);
   transition: background 0.15s;
@@ -402,7 +403,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hero__logo {
   display: block;
-  width: clamp(320px, 65vw, 600px);
+  width: clamp(340px, 70vw, 660px);
   height: auto;
   margin: 0 auto;
 }
@@ -411,7 +412,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hero__tagline {
   font-family: 'Secular One', sans-serif;
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-size: clamp(1.2rem, 3.5vw, 1.7rem);
   font-weight: 400;
   letter-spacing: 0.12em;
   color: var(--heading);
