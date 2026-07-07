@@ -85,7 +85,7 @@
   --accent-blue: #5F9AAF;
   --accent-green: #5B906B;
   --accent-gold: #CB9B52;
-  --ink: #3A3230;
+  --ink: #2A2220;
   --ink-soft: #5C5350;
   --ink-muted: #6B6260;
   --bg: #fff;
@@ -132,7 +132,7 @@ body {
   overflow-x: hidden;
   position: relative;
   font-family: 'Assistant', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.65;
   color: var(--ink);
   background: var(--bg);
