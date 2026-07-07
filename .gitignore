@@ -56,5 +56,8 @@ website/content-text.txt
 # Uncomment next line if you ever want output/ private:
 # output/
 
+# Archive snapshots (local only)
+*.zip
+
 # Claude worktrees (local session checkouts)
 .claude/worktrees/
