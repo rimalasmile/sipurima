@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>קטלוג הצגות | סיפורימה</title>
+  <meta name="description" content="קטלוג ההצגות של סיפורימה — הצגות מקור בהשתתפות הילדים, לגנים, בתי ספר ואירועים. בחרו לפי ערכים, חגים או גיל.">
+  <link rel="canonical" href="https://sipurima.com/catalog.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=2">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=2">
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="/" class="nav__brand">סיפורימה</a>
+      <div class="nav__actions">
+        <a href="/" class="btn btn--secondary btn--back">חזרה לאתר</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1 class="section__title">ההצגות שלנו</h1>
+        <div class="page-header__line page-header__line--pink"></div>
+        <p class="catalog__subtitle">כל הצגה היא מסע — הילדים לא צופים, הם חלק מהסיפור</p>
+      </div>
+    </div>
+
+    <div class="section catalog">
+      <div class="container">
+
+        <div class="catalog__filters" id="catalog-filters">
+          <div class="filter-group">
+            <span class="filter-group__label">סדרה:</span>
+            <div class="filter-group__tags" data-filter="series"></div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-group__label">ערכים:</span>
+            <div class="filter-group__tags" data-filter="values"></div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-group__label">חגים:</span>
+            <div class="filter-group__tags" data-filter="holiday"></div>
+          </div>
+          <button class="filter-reset" id="filter-reset" hidden>הציגו הכל</button>
+        </div>
+
+        <div class="catalog__grid" id="catalog-grid"></div>
+
+        <p class="catalog__empty" id="catalog-empty" hidden>לא נמצאו הצגות לפי הסינון שבחרתם. נסו שילוב אחר!</p>
+
+      </div>
+    </div>
+
+    <div class="section catalog__cta">
+      <div class="container" style="text-align: center;">
+        <p class="catalog__cta-text">מצאתם הצגה שמתאימה? נשמח לספר עוד!</p>
+        <a href="/#contact" class="btn btn--primary">דברו איתנו</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">סיפורימה | רימה שניידרמן</p>
+      <p>✉ <a href="mailto:rimalasmile@gmail.com">rimalasmile@gmail.com</a></p>
+      <p>☎ <a href="tel:+972525564136">052-5564136</a></p>
+      <p><a href="privacy.html">מדיניות פרטיות</a></p>
+      <p><a href="accessibility.html">הצהרת נגישות</a></p>
+      <p class="footer__credit">&copy; <span id="year"></span> סיפורימה</p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ═══════════ SHOW DATA ═══════════
+    // Each show: id, title, synopsis, values[], series, holiday, hasKit
+    // Rima picks ~20 from Bini's 40. Update this array to add/remove shows.
+    // Images: place show poster at assets/images/shows/{id}.jpg (added later via Nano Banana)
+    var shows = [
+      {
+        id: 'bobo-forest',
+        title: 'היער הקסום, מוצאים את בובו',
+        synopsis: 'יוסי ולוסי מגלים דלת סודית ביתם שמובילה ליער קסום שבו חיות מדברות. כולם מפחדים מבובו הדרקון המסתורי, אבל כשהגיבורים יוצאים למצוא אותו הם מגלים שהוא בסך הכל דרקון קטן ומצונן שצריך כוס תה וחיבוק.',
+        values: ['אומץ', 'קבלת השונה', 'חברות'],
+        series: 'בובו',
+        holiday: null,
+        hasKit: true
+      },
+      {
+        id: 'forest-asleep',
+        title: 'היער הקסום שלא התעורר',
+        synopsis: 'יער קסום נרדם יום אחד ולא התעורר. הצבעים נעלמו, השעון הקסום נעצר והכל קפא. הילדים יוצאים למסע למציאת ארבעה מפתחות קסומים עד שהיער חוזר לחיים!',
+        values: ['שיתוף פעולה', 'דמיון', 'מיינדפולנס'],
+        series: 'בובו',
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'tiktok',
+        title: 'טיקטוק מהאגדות',
+        synopsis: 'כל דמויות האגדות חיו בשלום עד שהמכשפה כישפה את כולם לעולם בני האדם! כדי לחזור הביתה הם צריכים לקבל לייקים בטיקטוק, אבל דרקון חכם מלמד אותם שאהבה לא באה מלייקים.',
+        values: ['נתינה', 'קבלת השונה', 'אהבה'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'blue-flame',
+        title: 'כישוף הלהבה הכחולה',
+        synopsis: 'המלך שובי דובי מקבל אהבה מכל הממלכה, אבל אחיו הגדול מכשף את כולם לבוז לו! הנסיכה עדן יוצאת למסע ומגלה שהדרך היחידה לשבור את הכישוף היא סליחה ואהבה.',
+        values: ['סליחה', 'כוחן של מילים', 'אהבה'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'bonbon-israel',
+        title: 'בון בון בארץ ישראל',
+        synopsis: 'בון בון הכלבה המפונקת מתל אביב נרדמת בחוף ומתעוררת לבד! היא יוצאת למסע מרגש ברחבי ישראל, מקיבוץ נחשולים דרך אילת ועד הכותל, ובכל מקום מגלה חברים חדשים ואת המשאלה הכי חשובה של הלב.',
+        values: ['מורשת וארץ', 'חברות', 'אהבה'],
+        series: 'בון בון',
+        holiday: null,
+        hasKit: true
+      },
+      {
+        id: 'bonbon-time',
+        title: 'בון בון והמסע בזמן',
+        synopsis: 'בון בון מגלה דלת מזהב מסתורית שלוקחת אותה אחורה בזמן, לשנת 1948! שם היא פוגשת את דוד בן גוריון ביום שבו הוכרזה מדינת ישראל, וחווה את הרגעים ההיסטוריים מקרוב.',
+        values: ['מורשת וארץ', 'אומץ', 'זהות'],
+        series: 'בון בון',
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'bonbon-kalanit',
+        title: 'בון בון וחברים מצילים את כלנית',
+        synopsis: 'בון בון כמעט קוטפת כלנית, אבל מגלה שזה פרח מוגן! כשכלנית המדברת מספרת שכל הפרחים נעלמו, בון בון יוצאת למסע ומגלה שדווקא הדבורים הן המפתח להצלת הטבע.',
+        values: ['קיימות', 'סקרנות'],
+        series: 'בון בון',
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'summer-kingdom',
+        title: 'ממלכת הקיץ',
+        synopsis: 'תותי המכשפה עובדת אצל אינפלציה המרושעת בממלכת החורף הנצחי, עד שהיא עוזרת לנסיכה גרייסי לברוח ומגלה שאפילו מי שנולד "רע" יכול לבחור להיות טוב.',
+        values: ['בחירה חופשית', 'שינוי', 'טוב לב'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'peace-knights',
+        title: 'אבירי השלום',
+        synopsis: 'בכפר נסתר חיים אבירים שלא נלחמים — הם עושים יוגה, שרים ומדיטציה! הגיבור יוצא לחפש "אבירים אמיתיים" ומגלה שהכוח האמיתי הוא לדעת להוציא אנרגיה בדרכים יפות.',
+        values: ['ויסות רגשי', 'שלום פנימי', 'אומץ'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'ron-dvoron',
+        title: 'מסע הביכורים של רון דבורון',
+        synopsis: 'רון הדבורון לא רוצה לחלוק את הדבש שלו בחג הביכורים. אבל כשהסופה מאיימת על כולם, דווקא רון הקטן מסכן את עצמו כדי להציל אותם. בסוף מתגלה שהוא שמר את הדבש לאמא החולה.',
+        values: ['נתינה', 'אומץ'],
+        series: null,
+        holiday: 'שבועות',
+        hasKit: false
+      },
+      {
+        id: 'dragon-egg',
+        title: 'ביצת דרקון בערוגה',
+        synopsis: 'טוטו מוצא ביצה ענקית בערוגת החסה, וממנה בוקע דרקון קטן וחמוד שקורא לו "אמא"! ביחד הם גדלים, מתאמנים לעוף ושולטים באש, עד שמגלים שדווקא ביחד הם יכולים ליצור מופע מדהים.',
+        values: ['חברות', 'התמדה', 'גילוי כישרון'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'savta-metuka',
+        title: 'סבתא מטקה וסבא קוקי',
+        synopsis: 'סבתא זפתא רוצה רק מנוחה, טלוויזיה וכוס תה, אבל הנכדים גוררים אותה לקמפינג! במסע המשוגע היא מדליקה מדורה בשלט טלוויזיה, וסבא מגיע הפוך ושואל "הגעתי לגואטמלה?"',
+        values: ['הומור', 'משפחה', 'הרפתקה'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'spring-passover',
+        title: 'סיפור אביבי לפסח',
+        synopsis: 'אילן שובר בטעות את הכנף של פרפר האביב, ואם הפרפר לא יצא למחול האביב, האביב לא יגיע! אילן יוצא למסע מלא פילים ישנוניים, צפרדעים מתלהבות ונסיכת קרח מאיימת.',
+        values: ['אחריות', 'קיימות'],
+        series: null,
+        holiday: 'פסח',
+        hasKit: false
+      },
+      {
+        id: 'egypt-exodus',
+        title: 'יציאת מצרים, 40 שנה במדבר',
+        synopsis: 'לילי לא מבינה למה צריך לאכול מצות עד שסבא פותח ספר קסום ופתאום היא במצריים העתיקה! היא עוברת את ים סוף ולומדת שגם כשמפחדים "אנחנו לא לבד, אנחנו ביחד".',
+        values: ['אמונה', 'אומץ', 'מורשת וארץ'],
+        series: null,
+        holiday: 'פסח',
+        hasKit: false
+      },
+      {
+        id: 'purim-party',
+        title: 'המסיבה של מרדכי, אחשוורוש ואסתר',
+        synopsis: 'אסתר רוצה לחגוג את פורים ולזכור את האומץ אבל היועצים מציעים רעיונות מטופשים! עד שבועז הליצן מציע להכין עוגיות בצורת האוזניים של המן ומרדכי מארגן מסיבה ענקית.',
+        values: ['אומץ', 'שמחה'],
+        series: null,
+        holiday: 'פורים',
+        hasKit: false
+      },
+      {
+        id: 'bee-sukkah',
+        title: 'הדבורה בסוכה',
+        synopsis: 'יונתן ומיה בונים סוכה ופתאום מגיעה דבורה מודאגת! היא מכווצת את הילדים ולוקחת אותם לכוורת, שם מתגלה שהפרחים נעלמו. ביחד הם מנקים, הפרחים חוזרים והדבש חוזר לזרום.',
+        values: ['קיימות', 'משפחה'],
+        series: null,
+        holiday: 'סוכות',
+        hasKit: false
+      },
+      {
+        id: 'triton',
+        title: 'טריטון רקדן הים',
+        synopsis: 'טריטון רוצה לרקוד אבל אבא אומר שרק בנות רוקדות! הוא יוצא למסע למציאת מלך הריקודים של הים ובסוף אבא מודה שטעה.',
+        values: ['שוויון מגדרי', 'ביטוי עצמי', 'אומץ'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'barbie-pirates',
+        title: 'ברבי מלכת הפיראטים',
+        synopsis: 'טום, הבן של ברבי, נחטף על ידי פיראטים! ברבי יוצאת להצלה עם פינקי השדונית, משה היוניקורן ונטע הפרפרים. ביחד הן מוכיחות שבנות יכולות הכל.',
+        values: ['העצמה', 'שוויון מגדרי', 'שיתוף פעולה'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'scared-wolf',
+        title: 'הזאב הפחדן',
+        synopsis: 'פעם היה זאב שפחד מהכל — ממלפפונים, מדלתות ואפילו מגורי חתולים! הוא יצא למסע אל הר האש וגילה שאומץ אמיתי הוא לא להפסיק לפחד אלא להמשיך בכל זאת.',
+        values: ['אומץ', 'חברות'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      },
+      {
+        id: 'secret-forest',
+        title: 'היער הסודי',
+        synopsis: 'שושן ואלון חיים בעיר עתידנית בלי עץ אחד, אבל אמא מספרת אגדות על "צמחים ענקיים שנקראים עצים". הם יוצאים עם תוכי שר למצוא את היער הסודי האחרון.',
+        values: ['קיימות', 'תקווה'],
+        series: null,
+        holiday: null,
+        hasKit: false
+      }
+    ];
+
+    // ═══════════ BUILD FILTERS ═══════════
+    var activeFilters = {};
+
+    function collectFilterValues(key) {
+      var set = {};
+      shows.forEach(function (s) {
+        if (key === 'values') {
+          s.values.forEach(function (v) { set[v] = true; });
+        } else if (key === 'series' && s.series) {
+          set[s.series] = true;
+        } else if (key === 'holiday' && s.holiday) {
+          set[s.holiday] = true;
+        }
+      });
+      return Object.keys(set).sort();
+    }
+
+    function buildFilterTags() {
+      ['series', 'values', 'holiday'].forEach(function (key) {
+        var container = document.querySelector('[data-filter="' + key + '"]');
+        var items = collectFilterValues(key);
+        if (!items.length) {
+          container.parentElement.hidden = true;
+          return;
+        }
+        items.forEach(function (val) {
+          var btn = document.createElement('button');
+          btn.className = 'filter-tag';
+          btn.textContent = val;
+          btn.setAttribute('data-key', key);
+          btn.setAttribute('data-value', val);
+          btn.addEventListener('click', function () { toggleFilter(key, val, btn); });
+          container.appendChild(btn);
+        });
+      });
+    }
+
+    function toggleFilter(key, val, btn) {
+      if (activeFilters[key] === val) {
+        delete activeFilters[key];
+        btn.classList.remove('filter-tag--active');
+      } else {
+        var prev = document.querySelector('.filter-tag--active[data-key="' + key + '"]');
+        if (prev) prev.classList.remove('filter-tag--active');
+        activeFilters[key] = val;
+        btn.classList.add('filter-tag--active');
+      }
+      renderGrid();
+      document.getElementById('filter-reset').hidden = Object.keys(activeFilters).length === 0;
+    }
+
+    document.getElementById('filter-reset').addEventListener('click', function () {
+      activeFilters = {};
+      document.querySelectorAll('.filter-tag--active').forEach(function (b) { b.classList.remove('filter-tag--active'); });
+      renderGrid();
+      this.hidden = true;
+    });
+
+    // ═══════════ RENDER GRID ═══════════
+    function matchesFilters(show) {
+      for (var key in activeFilters) {
+        var val = activeFilters[key];
+        if (key === 'values' && show.values.indexOf(val) === -1) return false;
+        if (key === 'series' && show.series !== val) return false;
+        if (key === 'holiday' && show.holiday !== val) return false;
+      }
+      return true;
+    }
+
+    function renderGrid() {
+      var grid = document.getElementById('catalog-grid');
+      var empty = document.getElementById('catalog-empty');
+      grid.innerHTML = '';
+      var count = 0;
+
+      shows.forEach(function (show) {
+        if (!matchesFilters(show)) return;
+        count++;
+
+        var card = document.createElement('article');
+        card.className = 'catalog-card';
+
+        var badges = '';
+        if (show.hasKit) badges += '<span class="catalog-card__kit-badge">קיט דיגיטלי זמין</span>';
+        if (show.series) badges += '<span class="catalog-card__series-badge">' + show.series + '</span>';
+        if (show.holiday) badges += '<span class="catalog-card__holiday-badge">' + show.holiday + '</span>';
+
+        var valueTags = show.values.map(function (v) {
+          return '<span class="catalog-card__value">' + v + '</span>';
+        }).join('');
+
+        var imgSrc = 'assets/images/shows/' + show.id + '.jpg';
+
+        card.innerHTML =
+          '<div class="catalog-card__poster">' +
+            '<div class="catalog-card__poster-placeholder"></div>' +
+          '</div>' +
+          '<div class="catalog-card__body">' +
+            '<h2 class="catalog-card__title">' + show.title + '</h2>' +
+            (badges ? '<div class="catalog-card__badges">' + badges + '</div>' : '') +
+            '<p class="catalog-card__synopsis">' + show.synopsis + '</p>' +
+            '<div class="catalog-card__values">' + valueTags + '</div>' +
+          '</div>';
+
+        card.addEventListener('click', function () {
+          card.classList.toggle('catalog-card--expanded');
+        });
+
+        grid.appendChild(card);
+      });
+
+      empty.hidden = count > 0;
+    }
+
+    // ═══════════ INIT ═══════════
+    buildFilterTags();
+    renderGrid();
+  })();
+  </script>
+</body>
+</html>
