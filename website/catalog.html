@@ -253,80 +253,7 @@
     var showsWithPoster = ['bobo-forest', 'tiktok', 'blue-flame', 'bonbon-israel', 'summer-kingdom', 'peace-knights', 'ron-dvoron', 'dragon-egg'];
     shows = shows.filter(function (s) { return showsWithPoster.indexOf(s.id) !== -1; });
 
-    // ═══════════ BUILD FILTERS ═══════════
-    var activeFilters = {};
-
-    function collectFilterValues(key) {
-      var set = {};
-      shows.forEach(function (s) {
-        if (key === 'values') {
-          s.values.forEach(function (v) { set[v] = true; });
-        } else if (key === 'series' && s.series) {
-          set[s.series] = true;
-        } else if (key === 'holiday' && s.holiday) {
-          set[s.holiday] = true;
-        }
-      });
-      return Object.keys(set).sort();
-    }
-
-    function buildFilterTags() {
-      ['series', 'values', 'holiday'].forEach(function (key) {
-        var container = document.querySelector('[data-filter="' + key + '"]');
-        var items = collectFilterValues(key);
-        if (!items.length) {
-          container.parentElement.hidden = true;
-          return;
-        }
-        items.forEach(function (val) {
-          var btn = document.createElement('button');
-          btn.className = 'filter-tag';
-          btn.textContent = val;
-          btn.setAttribute('data-key', key);
-          btn.setAttribute('data-value', val);
-          btn.addEventListener('click', function () { toggleFilter(key, val, btn); });
-          container.appendChild(btn);
-        });
-      });
-    }
-
-    function toggleFilter(key, val, btn) {
-      if (activeFilters[key] === val) {
-        delete activeFilters[key];
-        btn.classList.remove('filter-tag--active');
-      } else {
-        var prev = document.querySelector('.filter-tag--active[data-key="' + key + '"]');
-        if (prev) prev.classList.remove('filter-tag--active');
-        activeFilters[key] = val;
-        btn.classList.add('filter-tag--active');
-      }
-      renderGrid();
-      document.getElementById('filter-reset').hidden = Object.keys(activeFilters).length === 0;
-    }
-
-    document.getElementById('filter-toggle').addEventListener('click', function () {
-      var panel = document.getElementById('catalog-filters');
-      panel.hidden = !panel.hidden;
-    });
-
-    document.getElementById('filter-reset').addEventListener('click', function () {
-      activeFilters = {};
-      document.querySelectorAll('.filter-tag--active').forEach(function (b) { b.classList.remove('filter-tag--active'); });
-      renderGrid();
-      this.hidden = true;
-    });
-
     // ═══════════ RENDER GRID ═══════════
-    function matchesFilters(show) {
-      for (var key in activeFilters) {
-        var val = activeFilters[key];
-        if (key === 'values' && show.values.indexOf(val) === -1) return false;
-        if (key === 'series' && show.series !== val) return false;
-        if (key === 'holiday' && show.holiday !== val) return false;
-      }
-      return true;
-    }
-
     function renderGrid() {
       var grid = document.getElementById('catalog-grid');
       var empty = document.getElementById('catalog-empty');
@@ -334,7 +261,6 @@
       var count = 0;
 
       shows.forEach(function (show) {
-        if (!matchesFilters(show)) return;
         count++;
 
         var card = document.createElement('article');
@@ -373,7 +299,6 @@
     }
 
     // ═══════════ INIT ═══════════
-    buildFilterTags();
     renderGrid();
   })();
   </script>
