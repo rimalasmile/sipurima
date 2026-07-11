@@ -35,8 +35,8 @@
 
         <div class="catalog__filter-wrap">
           <button class="catalog__filter-toggle" id="filter-toggle">
-            <img src="assets/images/icon-rainbow.png" alt="" width="28" height="28" class="catalog__filter-icon">
-            סינון לפי נושא <span class="catalog__filter-arrow">▾</span>
+            <img src="assets/images/icon-rainbow.png" alt="" class="catalog__filter-icon">
+            <span class="catalog__filter-label">סינון חכם</span>
           </button>
           <div class="catalog__filters" id="catalog-filters" hidden>
             <div class="filter-group">
@@ -328,9 +328,7 @@
 
     document.getElementById('filter-toggle').addEventListener('click', function () {
       var panel = document.getElementById('catalog-filters');
-      var open = !panel.hidden;
-      panel.hidden = open;
-      this.querySelector('.catalog__filter-arrow').textContent = open ? '▾' : '▴';
+      panel.hidden = !panel.hidden;
     });
 
     document.getElementById('filter-reset').addEventListener('click', function () {
