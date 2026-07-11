@@ -1296,7 +1296,9 @@ body.a11y-no-animations *::after {
 }
 .catalog-card__poster-img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
   display: block;
 }
 .catalog-card__poster-placeholder {
