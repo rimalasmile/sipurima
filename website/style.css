@@ -1165,6 +1165,33 @@ body.a11y-no-animations *::after {
   margin-top: 0.3rem;
 }
 
+.catalog__filter-wrap {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.catalog__filter-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--heading);
+  background: #fff;
+  border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(212,134,110,0.1);
+}
+.catalog__filter-toggle:hover {
+  border-color: var(--accent-purple);
+  box-shadow: 0 2px 12px rgba(212,134,110,0.2);
+}
+.catalog__filter-icon {
+  vertical-align: middle;
+}
 .catalog__filters {
   display: flex;
   flex-wrap: wrap;
